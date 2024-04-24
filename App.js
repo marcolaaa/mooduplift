@@ -1,11 +1,27 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 
+import QuoteCard from './components/quoteCard';
+
+const TEST_LIST = [
+  {
+      message: "Test Message 1."
+  },
+  {
+      message: "Test Message blabla 2."
+  },
+  {
+      message: "Test Message lololo 3."
+  },
+  {
+      message: "Test Message yayaya 4."
+  }
+];
+
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <QuoteCard quotes={TEST_LIST}/>
     </View>
   );
 }
