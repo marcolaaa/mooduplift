@@ -2,6 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 
 import QuoteCard from './components/quoteCard';
+import styles from './styles/quoteStyles';
 
 const TEST_LIST = [
   {
@@ -20,17 +21,7 @@ const TEST_LIST = [
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <QuoteCard quotes={TEST_LIST}/>
-    </View>
+    <QuoteCard quotes={TEST_LIST}/>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
