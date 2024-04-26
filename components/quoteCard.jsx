@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, Animated, Dimensions, StatusBar } from "react-native";
+import { View, Text, Animated, Dimensions } from "react-native";
 const { width, height } = Dimensions.get("window");
 
 import { Svg, Defs, RadialGradient, Stop, Rect } from "react-native-svg";
@@ -18,19 +18,16 @@ export default class QuoteCard extends React.Component {
         const { quotes } = this.props;
 
         return (
-            <View style={styles.container}>
-                <StatusBar hidden />
-                <Animated.ScrollView
-                    scrollEventThrottle={16}
-                    contentContainerStyle={styles.scrollViewContainer}
-                    onScroll={Animated.event(
-                        [{ nativeEvent: { contentOffset: { y: this._scrollY } } }],
-                        { useNativeDriver: true }
-                    )}
-                >
-                    {quotes.map((quote, i) => this._renderQuote(quote, i))}
-                </Animated.ScrollView>
-            </View>
+            <Animated.ScrollView
+                scrollEventThrottle={16}
+                contentContainerStyle={styles.scrollViewContainer}
+                onScroll={Animated.event(
+                    [{ nativeEvent: { contentOffset: { y: this._scrollY } } }],
+                    { useNativeDriver: true }
+                )}
+            >
+                {quotes.map((quote, i) => this._renderQuote(quote, i))}
+            </Animated.ScrollView>
         );
     };
 
