@@ -3,7 +3,7 @@ import { StatusBar } from 'expo-status-bar';
 import { Animated, Text, View } from 'react-native';
 
 import QuoteCard from './quoteCard';
-import styles from '../styles/quoteStyles';
+import QuoteFetch from '../hook/QuoteFetch';
 
 const TEST_LIST = [
     {

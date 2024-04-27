@@ -55,7 +55,7 @@ export default function SplashScreen() {
             ])
                 .start();
 
-        }, 1000);
+        }, 1500);
 
     }, [])
 

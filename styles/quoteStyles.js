@@ -15,7 +15,7 @@ const quoteStyles = StyleSheet.create({
 	},
 	font: {
 		fontFamily: "sans-serif-light",
-		color: "#222",
+		color: "#CC5500",
 		fontWeight: "bold"
 	},
 	image: {

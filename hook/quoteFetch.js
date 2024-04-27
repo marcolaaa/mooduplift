@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { API_KEY } from '@env';
 const apiKey = API_KEY;
 
-const quoteFetch = () => {
+const QuoteFetch = () => {
 
     const [quotes, setQuotes] = useState("");
     const [isLoading, setIsLoading] = useState(false);
@@ -77,4 +77,4 @@ const quoteFetch = () => {
     return { quotes, isLoading, error, refectch };
 }
 
-export default quoteFetch;
+export default QuoteFetch;
