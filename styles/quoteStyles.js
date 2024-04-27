@@ -14,9 +14,8 @@ const quoteStyles = StyleSheet.create({
 		justifyContent: "center"
 	},
 	font: {
-		fontFamily: "sans-serif-light",
-		color: "#CC5500",
-		fontWeight: "bold"
+		fontFamily: "Satisfy-Regular",
+		color: "#CC5500"
 	},
 	image: {
 		width: width * 0.85,
@@ -30,7 +29,7 @@ const quoteStyles = StyleSheet.create({
 		padding: 15
 	},
 	description: {
-		fontSize: 18,
+		fontSize: 35,
 		marginVertical: 15,
 		textAlign: "center"
 	},
