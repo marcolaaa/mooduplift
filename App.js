@@ -1,13 +1,20 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import SplashScreen from './components/SplashScreen';
+import { useFonts } from 'expo-font';
 
 export default function App() {
-  return (
-    <SafeAreaProvider>
-      <SplashScreen></SplashScreen>
-    </SafeAreaProvider>
-  );
+    let [fontsLoaded] = useFonts({
+        "Satisfy-Regular": require('./assets/fonts/Satisfy-Regular.ttf'),
+    });
+
+    if (!fontsLoaded) {
+        return null;
+    }
+
+    return (
+        <SafeAreaProvider>
+            <SplashScreen></SplashScreen>
+        </SafeAreaProvider>
+    );
 }
