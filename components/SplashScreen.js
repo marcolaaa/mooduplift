@@ -3,7 +3,6 @@ import { View, Animated, Dimensions, StatusBar, Text } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import Logo from '../assets/logo.png'
-import Home from './Home.js';
 
 import QuoteCard from './quoteCard';
 import useFetch from '../hook/useFetch';
