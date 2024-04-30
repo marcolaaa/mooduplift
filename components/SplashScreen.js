@@ -5,6 +5,9 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Logo from '../assets/logo.png'
 import Home from './Home.js';
 
+import QuoteCard from './quoteCard';
+import useFetch from '../hook/useFetch';
+
 export default function SplashScreen() {
     // SafeArea value...
     const edges = useSafeAreaInsets();
@@ -17,47 +20,48 @@ export default function SplashScreen() {
     // Animating Content...
     const contentTransition = useRef(new Animated.Value(Dimensions.get('window').height)).current;
 
+    const { quotes, isLoading, error } = useFetch();
+
     useEffect(() => {
+        if (!isLoading) {
+            //Starting Animation after 50 ms...
+            setTimeout(() => {
 
-        //Starting Animation after 500 ms...
-        setTimeout(() => {
-
-            // Parallel animations...
-            Animated.parallel([
-                Animated.timing(
-                    startAnimation, {
-                    // For same height on non safe area devices... 
-                    toValue: -Dimensions.get('window').height * 0.5 + (edges.top + 65),
-                    useNativeDriver: true
-                }),
-                Animated.timing(
-                    scaleLogo, {
-                    // Scaling to .35... 
-                    toValue: .65,
-                    useNativeDriver: true
-                }),
-                Animated.timing(
-                    moveLogo, {
-                    // Moving to right most... 
-                    toValue: {
-                        x: (Dimensions.get('window').width / 2) - 65,
-                        y: 0
-                    },
-                    useNativeDriver: true
-                }),
-                Animated.timing(
-                    contentTransition,
-                    {
-                        toValue: 0,
+                // Parallel animations...
+                Animated.parallel([
+                    Animated.timing(
+                        startAnimation, {
+                        // For same height on non safe area devices... 
+                        toValue: -Dimensions.get('window').height * 0.5 + (edges.top + 65),
                         useNativeDriver: true
-                    }
-                )
-            ])
-                .start();
+                    }),
+                    Animated.timing(
+                        scaleLogo, {
+                        // Scaling to .35... 
+                        toValue: .65,
+                        useNativeDriver: true
+                    }),
+                    Animated.timing(
+                        moveLogo, {
+                        // Moving to right most... 
+                        toValue: {
+                            x: (Dimensions.get('window').width / 2) - 65,
+                            y: 0
+                        },
+                        useNativeDriver: true
+                    }),
+                    Animated.timing(
+                        contentTransition,
+                        {
+                            toValue: 0,
+                            useNativeDriver: true
+                        }
+                    )
+                ]).start();
 
-        }, 1500);
-
-    }, [])
+            }, 50);
+        }
+    }, [isLoading])
 
     // Going to move up...
     return (
@@ -110,7 +114,7 @@ export default function SplashScreen() {
                     { translateY: contentTransition }
                 ]
             }}>
-                <Home />
+                <QuoteCard quotes={quotes} />
             </Animated.View>
 
         </View>
