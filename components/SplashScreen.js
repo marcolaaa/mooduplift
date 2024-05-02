@@ -23,7 +23,7 @@ export default function SplashScreen() {
 
     useEffect(() => {
         if (!isLoading) {
-            //Starting Animation after 50 ms...
+            //Starting Animation after 500 ms...
             setTimeout(() => {
 
                 // Parallel animations...
@@ -58,7 +58,7 @@ export default function SplashScreen() {
                     )
                 ]).start();
 
-            }, 50);
+            }, 500);
         }
     }, [isLoading])
 
