@@ -11,5 +11,5 @@ The moodUplift App uses react-native within multiple libraries to create a frien
 - [Expo](https://www.npmjs.com/package/expo) - An open-source framework for making universal native apps with React. Expo runs on Android, iOS, and the web.
 ### Demo
 
-![]([https://github.com/Your_Repository_Name/Your_GIF_Name.gif](https://github.com/marcolaaa/mooduplift/blob/main/gif1.gif))
-![]([https://github.com/Your_Repository_Name/Your_GIF_Name.gif](https://github.com/marcolaaa/mooduplift/blob/main/gif_scroll.gif))
+![](https://github.com/marcolaaa/mooduplift/blob/main/gif1.gif)
+![](https://github.com/marcolaaa/mooduplift/blob/main/gif_scroll.gif)
